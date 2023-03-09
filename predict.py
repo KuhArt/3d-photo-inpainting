@@ -62,7 +62,6 @@ class Predictor(BasePredictor):
         config = yaml.load(open("argument.yml", "r"))
         # set for headless rendering
         config["offscreen_rendering"] = True
-        config["src_folder"] = 'input'
         os.makedirs(config["mesh_folder"], exist_ok=True)
         os.makedirs(config["video_folder"], exist_ok=True)
         os.makedirs(config["depth_folder"], exist_ok=True)
@@ -75,8 +74,8 @@ class Predictor(BasePredictor):
         from PIL import Image
         from torchvision.transforms.functional import to_pil_image
         im = Image.open(str(image_path)).convert("RGB") 
-        print('Saving input image to input/image.jpg...')
-        im.save('input/image.jpg')
+        print('Saving input image to image/image.jpg...')
+        im.save('image/image.jpg')
 
         # select trajectory type, shift range based on chosen video postfix effect
         traj_types_dict = {"dolly-zoom-in": "double-straight-line",
