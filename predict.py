@@ -102,6 +102,7 @@ class Predictor(BasePredictor):
             device = "cpu"
 
         print(f"running on device {device}")
+        print(sample_list)
 
         for idx in tqdm(range(len(sample_list))):
             depth = None
