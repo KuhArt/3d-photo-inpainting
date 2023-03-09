@@ -76,8 +76,8 @@ class Predictor(BasePredictor):
         from PIL import Image
         from torchvision.transforms.functional import to_pil_image
         im = Image.open(str(image_path)).convert("RGB") 
-        print('Saving input image to input/image.jpg...')
-        im.save('input/image.jpg')
+        print('Saving input image to input/image.png...')
+        im.save('input/image.png')
 
         # select trajectory type, shift range based on chosen video postfix effect
         traj_types_dict = {"dolly-zoom-in": "double-straight-line",
